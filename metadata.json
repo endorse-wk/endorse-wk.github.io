@@ -1,0 +1,8 @@
+{
+  "name": "XP Video",
+  "description": "The ultimate AI-powered video platform for high-performance streaming and intelligent content discovery.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}

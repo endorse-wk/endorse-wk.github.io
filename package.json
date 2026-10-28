@@ -1,0 +1,31 @@
+{
+  "name": "xp-video",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "node api/csv_to_json.js && concurrently \"npm run server\" \"vite\"",
+    "server": "node --env-file-if-exists=.env.local api/server.js",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist --dotfiles",
+    "build": "node api/csv_to_json.js && vite build && node scripts/prerender.js",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@google/genai": "^1.35.0",
+    "cors": "^2.8.6",
+    "express": "^5.2.1",
+    "lucide-react": "^0.562.0",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3",
+    "sqlite3": "^6.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.14.0",
+    "@vitejs/plugin-react": "^5.0.0",
+    "concurrently": "^9.2.1",
+    "gh-pages": "^6.3.0",
+    "typescript": "~5.8.2",
+    "vite": "^6.2.0"
+  }
+}
